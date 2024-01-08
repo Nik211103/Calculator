@@ -1,11 +1,22 @@
 package Figura;
 
+import java.util.ArrayList;
+
+
 public class Figura {
     public static void main(String[] args) {
-        Pryamoygolnik pryamoygolnik = new Pryamoygolnik(2.0,3.0);
-        System.out.println(pryamoygolnik.calclulatePloshad());
-        Crug cruzok = new Crug(2.1);
-        System.out.println(cruzok.calculatePirimetr());
+
+        ArrayList<Figura> figury = new ArrayList<>();
+        figury.add(new Crug(2.0));
+        figury.add(new Pryamoygolnik(12,4));
+        figury.add(new Treygolnik(1,2,3));
+        figury.add(new Cvadrat(5));
+        for (Figura figura: figury) {
+            System.out.println("Area: " + figura.calclulatePloshad());
+            System.out.println("Perimeter: " + figura.calculatePirimetr());
+            System.out.println("-------------");
+        }
+
     }
 
     public Figura(){
@@ -19,5 +30,6 @@ public class Figura {
     public double calculatePirimetr(){
         return 0;
     }
+
 
 }
